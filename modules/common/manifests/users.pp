@@ -18,4 +18,17 @@ class common::users {
         shell  => '/bin/zsh',
         uid    => $uid,
     }
+
+    $homedir = $::kernel ? {
+        'Darwin' => '/Users',
+        default  => '/home',
+    }
+
+    file { "${homedir}/steamedfish":
+        ensure  => directory,
+        owner   => 'steamedfish',
+        group   => 'steamedfish',
+        mode    => '0700',
+        require => User['steamedfish'],
+    }
 }
