@@ -12,6 +12,7 @@ class common::dotfiles {
         revision   => 'develop',
         user       => 'steamedfish',
         submodules => true,
+        require    => User['steamedfish'],
     }
 
     file { "${homedir}/.zinit":
