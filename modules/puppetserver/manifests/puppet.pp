@@ -1,6 +1,5 @@
 # user list
 class puppetserver::puppet {
-    include puppetlabs-vcsrepo
     vcsrepo { '/etc/puppetlabs/code':
         ensure     => latest,
         provider   => git,
@@ -8,5 +7,4 @@ class puppetserver::puppet {
         revision   => 'master',
         submodules => true,
     }
-
 }
