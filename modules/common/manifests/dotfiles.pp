@@ -15,6 +15,16 @@ class common::dotfiles {
         require    => User['steamedfish'],
     }
 
+    vcsrepo { "${homedir}/.vim":
+        ensure     => latest,
+        provider   => git,
+        source     => 'https://github.com/SpaceVim/SpaceVim.git',
+        revision   => 'master',
+        user       => 'steamedfish',
+        submodules => true,
+        require    => User['steamedfish'],
+    }
+
     file { "${homedir}/.zinit":
         ensure  => directory,
         owner   => 'steamedfish',
