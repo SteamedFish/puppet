@@ -10,6 +10,7 @@ class common::dotfiles {
         provider   => git,
         source     => 'https://github.com/hlissner/doom-emacs.git',
         revision   => 'develop',
+        user       => 'steamedfish',
         submodules => true,
     }
 
@@ -26,6 +27,7 @@ class common::dotfiles {
         provider   => git,
         source     => 'https://github.com/zdharma/zinit.git',
         revision   => 'master',
+        user       => 'steamedfish',
         submodules => true,
         require    => File["${homedir}/.zinit"],
     }
