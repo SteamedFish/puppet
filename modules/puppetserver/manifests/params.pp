@@ -1,0 +1,3 @@
+# params
+class puppetserver::params{
+}
