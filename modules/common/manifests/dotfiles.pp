@@ -6,7 +6,7 @@ class common::dotfiles {
     }
 
     vcsrepo { "${homedir}/.emacs.d":
-        ensure     => present,
+        ensure     => latest,
         provider   => git,
         source     => 'https://github.com/hlissner/doom-emacs.git',
         revision   => 'develop',
@@ -16,7 +16,7 @@ class common::dotfiles {
     }
 
     vcsrepo { "${homedir}/.vim":
-        ensure     => present,
+        ensure     => latest,
         provider   => git,
         source     => 'https://github.com/SpaceVim/SpaceVim.git',
         revision   => 'master',
@@ -34,7 +34,7 @@ class common::dotfiles {
     }
 
     vcsrepo { "${homedir}/.zinit/bin":
-        ensure     => present,
+        ensure     => latest,
         provider   => git,
         source     => 'https://github.com/zdharma/zinit.git',
         revision   => 'master',
