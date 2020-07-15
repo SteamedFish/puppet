@@ -1,14 +1,14 @@
 # user list
 class common::users {
 
-    $uid = $::kernel ? {
+    $uid = $facts['kernel'] ? {
         'Darwin' => 501,
         default  => 1000,
     }
 
-    if $::kernel == 'Darwin' {
+    if $facts['kernel'] == 'Darwin' {
         $groups = ['admin']
-    } elsif $::os.family == 'Debian' {
+    } elsif $facts['os']['family'] == 'Debian' {
         $groups = ['root', 'adm']
     } else {
         $groups = ['root', 'wheel']
@@ -22,7 +22,7 @@ class common::users {
         uid    => $uid,
     }
 
-    $homedir = $::kernel ? {
+    $homedir = $facts['kernel'] ? {
         'Darwin' => '/Users',
         default  => '/home',
     }
