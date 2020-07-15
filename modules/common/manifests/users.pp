@@ -6,9 +6,12 @@ class common::users {
         default  => 1000,
     }
 
-    $groups = $::kernel ? {
-        'Darwin' => ['admin'],
-        default  => ['root', 'wheel'],
+    if $::kernel == 'Darwin' {
+        $groups = ['admin']
+    } elsif $::os.family == 'Debian' {
+            $groups = ['root', 'adm']
+    } else {
+        $groups = ['root', 'wheel']
     }
 
     user { 'steamedfish':
