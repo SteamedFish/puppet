@@ -9,7 +9,7 @@ class common::users {
     if $::kernel == 'Darwin' {
         $groups = ['admin']
     } elsif $::os.family == 'Debian' {
-            $groups = ['root', 'adm']
+        $groups = ['root', 'adm']
     } else {
         $groups = ['root', 'wheel']
     }
