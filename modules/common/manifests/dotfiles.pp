@@ -42,4 +42,15 @@ class common::dotfiles {
         submodules => true,
         require    => File["${homedir}/.zinit"],
     }
+
+    exec { 'dotfiles':
+        command => 'yadm clone git@github.com:SteamedFish/dotfiles.git',
+        creates => "${homedir}/.config/yadm/repo.git",
+        user    => 'steamedfish',
+        group   => 'steamedfish',
+        onlyif  => ['command -v yadm', "test -f ${homedir}/.ssh/id_rsa"],
+        timeout => 3000,
+        tries   => 10,
+        require => User['steamedfish'],
+    }
 }
