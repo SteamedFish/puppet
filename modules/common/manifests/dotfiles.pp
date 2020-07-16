@@ -46,6 +46,7 @@ class common::dotfiles {
     exec { 'dotfiles':
         command => 'yadm clone git@github.com:SteamedFish/dotfiles.git',
         creates => "${homedir}/.config/yadm/repo.git",
+        path    => '/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin',
         user    => 'steamedfish',
         group   => 'steamedfish',
         onlyif  => ["bash -c 'command -v yadm'", "test -f ${homedir}/.ssh/id_rsa"],
