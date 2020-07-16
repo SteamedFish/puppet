@@ -1,5 +1,8 @@
 # configrations
 class common::dotfiles {
+
+    require common::users
+
     $homedir = $::kernel ? {
         'Darwin' => '/Users/steamedfish',
         default  => '/home/steamedfish',
@@ -12,7 +15,6 @@ class common::dotfiles {
         revision   => 'develop',
         user       => 'steamedfish',
         submodules => true,
-        require    => User['steamedfish'],
     }
 
     vcsrepo { "${homedir}/.vim":
@@ -22,15 +24,13 @@ class common::dotfiles {
         revision   => 'master',
         user       => 'steamedfish',
         submodules => true,
-        require    => User['steamedfish'],
     }
 
     file { "${homedir}/.zinit":
-        ensure  => directory,
-        owner   => 'steamedfish',
-        group   => 'steamedfish',
-        mode    => '0755',
-        require => User['steamedfish'],
+        ensure => directory,
+        owner  => 'steamedfish',
+        group  => 'steamedfish',
+        mode   => '0755',
     }
 
     vcsrepo { "${homedir}/.zinit/bin":
@@ -52,6 +52,5 @@ class common::dotfiles {
         onlyif  => ["bash -c 'command -v yadm'", "test -f ${homedir}/.ssh/id_rsa"],
         timeout => 3000,
         tries   => 10,
-        require => User['steamedfish'],
     }
 }
