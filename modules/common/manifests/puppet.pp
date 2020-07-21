@@ -19,11 +19,25 @@ class common::puppet {
     }
 
     if $facts['os']['family'] == 'Debian' {
-        file { 'puppet6.list':
-            ensure   => file,
-            name     => '/etc/apt/sources.list.d/puppet6.list',
-            contenet => template('apt-sourcelist/puppet6.list.erb'),
+
+        include apt
+
+        apt::source {'puppet6':
+            comment  => 'puppet 6 repo',
+            location => 'http://apt.puppetlabs.com',
+            release  => $facts['os']['distro']['codename'],
+            repos    => 'puppet6',
+            key      => {
+                'id'     => '7F438280EF8D349F',
+                'server' => 'pgp.mit.edu',
+            },
+            include  => {
+                'deb' => true,
+                'src' => false,
+            },
+            before   => Package['puppet6-release'],
         }
+
         package {'puppet6-release':
             ensure  => latest,
             require => File['puppet6.list'],
