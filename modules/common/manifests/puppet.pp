@@ -35,12 +35,11 @@ class common::puppet {
                 'deb' => true,
                 'src' => false,
             },
-            before   => Package['puppet6-release'],
         }
 
         package {'puppet6-release':
             ensure  => latest,
-            require => File['puppet6.list'],
+            require => [Class['apt::update'], Class['Apt::Source']],
             before  => Package['puppet'],
         }
     }
