@@ -13,8 +13,8 @@ class puppetserver::puppet {
     # }
 
     service { 'puppetserver':
-        ensure  => 'running',
-        enable  => true,
+        ensure => 'running',
+        enable => true,
         # require => Package['puppetserver'],
     }
 }
