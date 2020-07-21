@@ -7,4 +7,14 @@ class puppetserver::puppet {
         revision   => 'master',
         submodules => true,
     }
+
+    package { 'puppetserver':
+        ensure => latest,
+    }
+
+    service { 'puppetserver':
+        ensure  => 'running',
+        enable  => true,
+        require => Package['puppetserver'],
+    }
 }
