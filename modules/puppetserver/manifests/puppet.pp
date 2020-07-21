@@ -8,13 +8,13 @@ class puppetserver::puppet {
         submodules => true,
     }
 
-    package { 'puppetserver':
-        ensure => latest,
-    }
+    # package { 'puppetserver':
+    #     ensure => latest,
+    # }
 
     service { 'puppetserver':
         ensure  => 'running',
         enable  => true,
-        require => Package['puppetserver'],
+        # require => Package['puppetserver'],
     }
 }
