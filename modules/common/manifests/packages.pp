@@ -20,13 +20,41 @@ class common::packages {
         'unzip',
         'wget',
         'rsync',
+        'tree',
+        'tcpdump',
+        'socat',
     ]
 
-    $packages_debian = ['toilet-fonts', 'fd-find', 'build-essential', 'bind9-host','bsdutils']
+    $packages_debian = [
+        'toilet-fonts',
+        'fd-find',
+        'build-essential',
+        'bind9-host',
+        'bsdutils'
+    ]
 
-    $packages_arch = ['toilet-fonts', 'youtube-dl', 'you-get', 'fd', 'lsd']
+    $packages_arch = [
+        'toilet-fonts',
+        'youtube-dl',
+        'you-get',
+        'fd',
+        'lsd',
+        'diff-so-fancy',
+        'bind',
+        'vim-nox',
+        'yadm',
+    ]
 
-    $packages_linux = ['dstat', 'dnsutils','busybox','diffutils','dmidecode','dnsutils','ansible-lint', 'ansible']
+    $packages_linux = [
+        'dstat',
+        'dnsutils',
+        'busybox',
+        'diffutils',
+        'dmidecode',
+        'ansible-lint',
+        'ansible',
+        'grc',
+    ]
 
 
     each($packages) |$package| {
