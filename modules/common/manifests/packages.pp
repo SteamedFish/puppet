@@ -15,7 +15,6 @@ class common::packages {
         'exa',
         'p7zip',
         'ripgrep',
-        'telnet',
         'unrar',
         'unzip',
         'wget',
@@ -35,10 +34,11 @@ class common::packages {
         'emacs-nox',
         'mtr-tiny',
         'golang',
+        'telnet',
     ]
 
     $packages_arch = [
-        'toilet-fonts',
+        'toilet',
         'youtube-dl',
         'you-get',
         'fd',
