@@ -39,7 +39,6 @@ class common::packages {
     ]
 
     $packages_arch = [
-        'toilet',
         'youtube-dl',
         'you-get',
         'fd',
