@@ -28,6 +28,7 @@ class common::packages {
         'toilet-fonts',
         'fd-find',
         'build-essential',
+        'dnsutils',
         'bind9-host',
         'bsdutils',
         'vim-nox',
@@ -53,7 +54,6 @@ class common::packages {
 
     $packages_linux = [
         'dstat',
-        'dnsutils',
         'busybox',
         'diffutils',
         'dmidecode',
