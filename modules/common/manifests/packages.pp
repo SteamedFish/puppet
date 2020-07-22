@@ -31,6 +31,10 @@ class common::packages {
         'build-essential',
         'bind9-host',
         'bsdutils'
+        'vim-nox',
+        'emacs-nox',
+        'mtr-tiny',
+        'golang',
     ]
 
     $packages_arch = [
@@ -41,8 +45,10 @@ class common::packages {
         'lsd',
         'diff-so-fancy',
         'bind',
-        'vim-nox',
         'yadm',
+        'vim',
+        'mtr',
+        'go',
     ]
 
     $packages_linux = [
@@ -54,6 +60,7 @@ class common::packages {
         'ansible-lint',
         'ansible',
         'grc',
+        'git-crypt',
     ]
 
 
