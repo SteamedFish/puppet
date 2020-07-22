@@ -30,7 +30,7 @@ class common::packages {
         'fd-find',
         'build-essential',
         'bind9-host',
-        'bsdutils'
+        'bsdutils',
         'vim-nox',
         'emacs-nox',
         'mtr-tiny',
