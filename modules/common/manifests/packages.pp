@@ -49,6 +49,7 @@ class common::packages {
         'vim',
         'mtr',
         'go',
+        'wakatime',
     ]
 
     $packages_linux = [
