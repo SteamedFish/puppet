@@ -49,6 +49,8 @@ class common::packages {
         'vim',
         'mtr',
         'go',
+        'proselint',
+        'rust-analyzer',
         'wakatime',
     ]
 
