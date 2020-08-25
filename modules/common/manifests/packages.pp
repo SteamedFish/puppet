@@ -50,6 +50,7 @@ class common::packages {
         'mtr',
         'go',
         'proselint',
+        'pacman-contrib',
         'rust-analyzer',
         'wakatime',
     ]
