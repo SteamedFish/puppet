@@ -1,5 +1,6 @@
 # configure sysconfig
-class common::syconfig {
+
+class common::sysconfig {
     file { 'motd':
         ensure => present,
         path   => '/etc/motd',
