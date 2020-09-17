@@ -4,4 +4,5 @@ class common inherits common::params {
     include common::puppet
     include common::dotfiles
     include common::packages
+    include common::sysconfig
 }
