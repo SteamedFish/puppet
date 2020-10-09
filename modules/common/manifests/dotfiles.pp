@@ -8,7 +8,7 @@ class common::dotfiles {
         default  => '/home/steamedfish',
     }
 
-    vcsrepo { "${homedir}/.emacs.d":
+    vcsrepo { "${homedir}/.config/emacs":
         ensure     => latest,
         provider   => git,
         source     => 'https://github.com/hlissner/doom-emacs.git',
